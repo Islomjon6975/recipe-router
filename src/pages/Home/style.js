@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import {ReactComponent as setting} from '../../assets/Shape.svg'
 
 export const Container = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 `
 
 export const Left = styled.div`
-    width: 20%;
+    width: 230px;
     height: 100%;
     background:#131313;
 `
@@ -67,7 +67,6 @@ export const Nav = styled.div`
         display: flex;
         align-items: center;
         height: 30px;
-        border: 1px solid black;
         padding: 0 20px;
         text-decoration: none;
         font-size: 13px;
@@ -76,12 +75,15 @@ export const Nav = styled.div`
 ` 
 
 export const Right = styled.div`
-    width: 80%;
+    width: calc(100% - 230px);
     height: 100%;
     background-color: transparent;
 `
 
 export const Navbar = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
     height: 50px;
     background-color: #131313;
@@ -90,6 +92,26 @@ export const Navbar = styled.div`
 export const Body = styled.div`
     width: 100%;
     height: calc(100vh - 50px);
-    padding: 30px;
+    padding:20px 40px 0 40px;
     box-sizing: border-box;
+    overflow-y: auto;
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: #666;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+    }
+    ::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: #888;
+        
+    }
+`
+
+export const Setting = styled(setting)`
+    margin-right: 30px;
+    width: 20px;
+    height: 20px;
 `

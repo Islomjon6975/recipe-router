@@ -1,11 +1,12 @@
 
-import React from 'react'
-import { Body, Container, Left, Logo, Nav, Navbar, Right, User, User__gmail, User__info, User__name, Wrapper } from './style'
+import React, { useEffect } from 'react'
+import { Body, Container, Left, Logo, Nav, Navbar, Right, Setting, User, User__gmail, User__info, User__name, Wrapper } from './style'
 import user from '../../assets/user.png'
 import {sidebar} from '../../utils/sidebar'
 import { NavLink, Outlet } from 'react-router-dom'
 
 export const Home = () => {
+    
   return (
     <Container>
         <Left>
@@ -21,6 +22,7 @@ export const Home = () => {
             {
                 sidebar.map((item)=>(
                     <NavLink 
+                        key={item.id}
                         className='navlink' 
                         to={item.path}
                         style={({isActive})=>{
@@ -36,7 +38,9 @@ export const Home = () => {
             </Nav>
         </Left>
         <Right>
-            <Navbar></Navbar>
+            <Navbar>
+                <Setting />
+            </Navbar>
             <Body>
                 <Outlet />
             </Body>
