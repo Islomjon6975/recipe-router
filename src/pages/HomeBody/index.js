@@ -1,11 +1,13 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Card, Card__description, Card__img, Card__img__container, Card__info__container, Card__title, Card__User__img, Card__User__Info, Container, Right, Search, Title, User__gmail, User__info, User__name, Wrapper } from './style'
 import img from '../../assets/user.png'
 import food from '../../assets/food1.jpg'
-import { recipes } from '../../utils/recipes'
+import { RecipeContext } from '../../context/recipesContext'
+
 
 export const HomeBody = () => {
+  const [recipes, setRecipes] = useContext(RecipeContext)
   const [data, setData] = useState(recipes)
 
   const onSearch = (e) => {

@@ -37,10 +37,11 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
     border-radius: 3px;
-    height: 300px;
+    /* height: 300px; */
     background: #131313;
     box-sizing: border-box;
     overflow: hidden;
+    padding-bottom: 10px;
 `
 
 
