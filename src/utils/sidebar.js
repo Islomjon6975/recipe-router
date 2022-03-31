@@ -14,7 +14,7 @@ export const sidebar = [
         element: <HomeBody />,
         child:[],
         hidden: false,
-        isPrivate: false,
+        isPrivate: true,
     },
     {
         id: 2, 
@@ -23,7 +23,7 @@ export const sidebar = [
         element: <AddRecipe />,
         child:[],
         hidden: false,
-        isPrivate: false,
+        isPrivate: true,
     },
     {
         id: 3, 

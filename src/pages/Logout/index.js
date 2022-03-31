@@ -24,6 +24,7 @@ import { useNavigate } from 'react-router-dom';
       setState(false)
       setLogout(true)
       navigate('/login')
+      localStorage.clear()
     }
 
     return (

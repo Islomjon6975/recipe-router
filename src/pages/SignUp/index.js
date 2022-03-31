@@ -15,17 +15,35 @@ import { SignUpContext } from '../../context/signup';
     const [user, setUser] = useState({
       name: '',
       surname: '',
-      username: '',
+      password: '',
       email: '',
     });
 
 
     const onChange = (e) => {
       const {value, name} = e.target;
-      setUser({[name]: value})
+      if(!(signup.email === user.email && signup.password === user.email)){
+
+        setUser({...user, [name]: value})
+      }
     }
 
-    console.log(user)
+    const signUp = () => {
+      setSignUp(user)
+      
+      setUser({
+        name: '',
+        surname: '',
+        password: '',
+        email: '',
+      })
+
+      {
+        signup.length && navigate('/login')
+      }
+      
+    }
+
 
 
     return (
@@ -33,11 +51,11 @@ import { SignUpContext } from '../../context/signup';
         <LOGIN__SIGNUP>
           <Login__container>
             <Title>Sign Up</Title>
-            <Input name='name' onChange={onChange} type='text' placeholder='Name' />
-            <Input name='surname' onChange={onChange} type='text' placeholder='Surname' />
-            <Input name='username' onChange={onChange} type='text' placeholder='Username' />
-            <Input name='email' onChange={onChange} type='email' placeholder='Email' />
-            <Button__login>Login</Button__login>
+            <Input value={user.name} name='name' onChange={onChange} type='text' placeholder='Name' />
+            <Input value={user.surname} name='surname' onChange={onChange} type='text' placeholder='Surname' />
+            <Input value={user.email} name='email' onChange={onChange} type='email' placeholder='Email' />
+            <Input value={user.password} name='password' onChange={onChange} type='password' placeholder='Password' />
+            <Button__login onClick={signUp}>Sign Up</Button__login>
             <Login__des>Do you have an account ? <DOYOU  onClick={()=>navigate('/login')} > Login</DOYOU></Login__des>
           </Login__container>
         </LOGIN__SIGNUP>

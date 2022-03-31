@@ -33,7 +33,6 @@ export const LOGIN__SIGNUP = styled.div`
 export const Login__container = styled.div`
     width:400px;
     height: 300px;
-    border: 1px solid black;
 `
 
 
